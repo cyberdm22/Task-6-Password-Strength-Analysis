@@ -4,7 +4,7 @@
 **Domain:** Cybersecurity / Blue & Red Teaming
 
 ## 🎯 Objective
-[cite_start]Understand what makes a password strong and test it against password strength tools[cite: 6]. [cite_start]The goal is to evaluate password complexity, understand the mechanics of password cracking, and establish best practices for secure authentication[cite: 18, 29].
+Understand what makes a password strong and test it against password strength tools.The goal is to evaluate password complexity, understand the mechanics of password cracking, and establish best practices for secure authentication.
 
 ## 🧮 The Mathematics of Password Strength (Entropy)
 Password strength is measured in bits of entropy, calculating the computational difficulty of guessing it. The mathematical formula is:
@@ -16,7 +16,7 @@ Where:
 * **L** = Length of the password
 * **R** = Pool Size (number of possible characters, e.g., 95 for full ASCII)
 
-*Note: Length scales entropy linearly, while pool size scales it logarithmically. A long passphrase of simple lowercase words often mathematically defeats a short, complex password. This is why a 20-character password of just lowercase letters (high $L$, low $R$) is often much stronger than an 8-character password crammed with symbols (low $L$, high $R$). This is the core concept behind passphrases.*
+*Note: Length scales entropy linearly, while pool size scales it logarithmically. A long passphrase of simple lowercase words often mathematically defeats a short, complex password. This is why a 20-character password of just lowercase letters (high $L$, low $R$) is often much stronger than an 8-character password crammed with symbols (low $L$, high $R$). This is the core concept behind **passphrases**.*
 
 ## 🛠️ The Kali Linux Cracking Arsenal
 
@@ -28,12 +28,12 @@ Where:
 ### Popular Password Dictionaries
 * **rockyou.txt:** The original rockyou.txt dictionary was born from a 2009 breach of a social media widget company, exposing 32 million plaintext passwords. Because these were real passwords created by real humans, the dataset became the gold standard for cracking.
 * **RockYou2024:** The threat landscape has scaled massively since 2009. In July 2024, a threat actor operating under the alias "ObamaCare" published a colossal compilation dubbed RockYou2024. This dataset aggregates historic and recent data breaches into a single file containing nearly 10 billion unique plaintext passwords.
-* **SecLists:** Maintained by security researcher Daniel Miessler, SecLists is effectively the pentester's bible. It is a massive GitHub repository (around 1.8GB) that comes pre-packaged in Kali Linux and can be installed via the command 'sudo apt install seclists'. SecLists goes far beyond just passwords; it includes comprehensive lists of default usernames, sensitive data grep patterns, and even fuzzing payloads used for discovering hidden web directories.
+* **SecLists:** Maintained by security researcher Daniel Miessler, SecLists is effectively the pentester's bible. It is a massive GitHub repository (around 1.8GB) that comes pre-packaged in Kali Linux and can be installed via the command `sudo apt install seclists`. SecLists goes far beyond just passwords; it includes comprehensive lists of default usernames, sensitive data grep patterns, and even fuzzing payloads used for discovering hidden web directories.
 
 ---
 
 ## 📊 Deliverables: Password Evaluation Report
-[cite_start]Below is the evaluation of different password structures tested against standard strength-checking parameters[cite: 8, 12, 13].
+[cite_start]Below is the evaluation of different password structures tested against standard strength-checking parameters.
 
 | Password Variation | Complexity Profile | Expected Security Reality (Red/Blue Team View) |
 | :--- | :--- | :--- |
