@@ -16,19 +16,19 @@ Where:
 * **L** = Length of the password
 * **R** = Pool Size (number of possible characters, e.g., 95 for full ASCII)
 
-*Note: Length scales entropy linearly, while pool size scales it logarithmically. A long passphrase of simple lowercase words often mathematically defeats a short, complex password.*
+*Note: Length scales entropy linearly, while pool size scales it logarithmically. A long passphrase of simple lowercase words often mathematically defeats a short, complex password. This is why a 20-character password of just lowercase letters (high $L$, low $R$) is often much stronger than an 8-character password crammed with symbols (low $L$, high $R$). This is the core concept behind passphrases.*
 
 ## 🛠️ The Kali Linux Cracking Arsenal
 
 ### Core Password Cracking Tools
-* **Hashcat:** The industry standard for offline hash cracking. It utilizes GPU hardware acceleration to test billions of hashes per second and excels at rule-based permutations.
-* **John the Ripper (JTR):** A versatile, traditionally CPU-based offline cracker. It is highly effective for auditing local OS credentials (like Linux `/etc/shadow` or Windows NTLM hashes).
-* **THC-Hydra:** An online brute-forcing tool used against live login portals (SSH, FTP, HTTP forms) rather than offline database dumps.
+* **Hashcat:** The industry standard for offline hash cracking. It utilizes GPU hardware acceleration to test billions of hashes per second and excels at rule-based permutations. This is the undisputed king of modern offline cracking. Hashcat relies on hardware acceleration, utilizing the immense parallel processing power of GPUs via OpenCL or CUDA architectures. The latest stable releases, such as version 7.1.2, support over 450 distinct hash algorithms. Hashcat excels at "Rule-Based" attacks, where you feed it a standard dictionary, and its internal engine rapidly applies permutations (e.g., changing "password" to "P@ssw0rd2026!") entirely within the GPU memory.
+* **John the Ripper (JTR):** A versatile, traditionally CPU-based offline cracker. It is highly effective for auditing local OS credentials (like Linux `/etc/shadow` or Windows NTLM hashes). Often just called "John," this tool is traditionally CPU-based. While it can handle massive database dumps, John shines when attacking operating system credentials. It is uniquely tailored for cracking local UNIX/Linux shadow files, Windows NTLM/SAM hashes, or extracting passwords from encrypted ZIP files and SSH private keys.
+* **THC-Hydra:** An online brute-forcing tool used against live login portals (SSH, FTP, HTTP forms) rather than offline database dumps. It is critical to distinguish Hydra from Hashcat and JTR. Hashcat and JTR are offline crackers (you already stole the hashes). Hydra is an online brute-forcing tool. You point Hydra at a live login portal (like SSH, FTP, or a web form) and it fires usernames and passwords over the network until it gets a successful HTTP response.
 
 ### Popular Password Dictionaries
-* **rockyou.txt:** The legendary wordlist built from a 2009 breach. It remains a standard benchmark for identifying weak, human-generated passwords.
-* **RockYou2024:** A massive, modern compilation containing nearly 10 billion unique plaintext passwords aggregated from historic and recent data breaches.
-* **SecLists:** A comprehensive collection of multiple lists used during security assessments, including passwords, usernames, data patterns, and fuzzing payloads.
+* **rockyou.txt:** The original rockyou.txt dictionary was born from a 2009 breach of a social media widget company, exposing 32 million plaintext passwords. Because these were real passwords created by real humans, the dataset became the gold standard for cracking.
+* **RockYou2024:** The threat landscape has scaled massively since 2009. In July 2024, a threat actor operating under the alias "ObamaCare" published a colossal compilation dubbed RockYou2024. This dataset aggregates historic and recent data breaches into a single file containing nearly 10 billion unique plaintext passwords.
+* **SecLists:** Maintained by security researcher Daniel Miessler, SecLists is effectively the pentester's bible. It is a massive GitHub repository (around 1.8GB) that comes pre-packaged in Kali Linux and can be installed via the command 'sudo apt install seclists'. SecLists goes far beyond just passwords; it includes comprehensive lists of default usernames, sensitive data grep patterns, and even fuzzing payloads used for discovering hidden web directories.
 
 ---
 
