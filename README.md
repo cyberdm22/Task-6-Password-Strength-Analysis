@@ -47,26 +47,26 @@ Where:
 
 ## 📝 Interview Questions & Answers
 
-**1. [cite_start]What makes a password strong?** [cite: 20]
+**1. What makes a password strong?** 
 A strong password possesses high entropy. This is achieved primarily through length (16+ characters) and a wide character pool (upper/lowercase, numbers, and symbols) to make guessing mathematically unfeasible. It must also lack predictability and not exist in known breach databases.
 
-**2. [cite_start]What are common password attacks?** [cite: 21]
+**2. What are common password attacks?** 
 The most common attacks include Dictionary Attacks (testing known lists), Brute Force Attacks (testing every combination), Credential Stuffing (using compromised credentials across multiple sites), and Rule-Based Attacks (modifying dictionary words with common patterns).
 
-**3. [cite_start]Why is password length important?** [cite: 22]
+**3. Why is password length important?**
 Password length increases mathematical entropy exponentially. Adding one more character to a password multiplies the time it takes to brute-force by the total number of possible characters in the pool.
 
-**4. [cite_start]What is a dictionary attack?** [cite: 23]
+**4. What is a dictionary attack?**
 A dictionary attack is an automated method where an attacker systematically tests a large pre-compiled list of words, phrases, and commonly leaked passwords to guess a user's credentials.
 
-**5. [cite_start]What is multi-factor authentication?** [cite: 24]
+**5. What is multi-factor authentication?**
 MFA is a security mechanism requiring a user to provide two or more verification factors to gain access, combining something the user knows (password) with something the user has (authenticator app) or is (biometrics).
 
-**6. [cite_start]How do password managers help?** [cite: 25]
+**6. How do password managers help?**
 They generate highly complex, unique passwords for every service and store them in an encrypted vault. This eliminates password reuse and removes the burden of memorization from the user.
 
-**7. [cite_start]What are passphrases?** [cite: 26]
+**7. What are passphrases?**
 Passphrases are a sequence of random, unrelated words (e.g., `purple-ocean-guitar-flying`). Their extreme length creates massive entropy, yet they are much easier for human beings to remember than random strings of characters.
 
-**8. [cite_start]What are common mistakes in password creation?** [cite: 27]
+**8. What are common mistakes in password creation?**
 Common mistakes include reusing the same password across platforms, using personal information, making predictable character substitutions, and using short passwords just to pass minimum complexity requirements.
